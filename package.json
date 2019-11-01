@@ -131,11 +131,7 @@
     ]
   },
   "babel": {
-    "plugins": [
-      "babel-plugin-transform-decorators-legacy"
-    ],
-    "presets": [
-      "react-app"
-    ]
+    "plugins": ["babel-plugin-transform-decorators-legacy"],
+    "presets": ["react-app"]
   }
 }
