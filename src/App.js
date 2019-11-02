@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import { Provider } from "mobx-react"
 import BirdStore from "./stores/BirdStore"
 import Birds from "./Birds"
@@ -13,4 +13,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

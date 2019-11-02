@@ -1,7 +1,7 @@
-import { observer, action, computed } from "mobx"
+import { observable, action, computed } from "mobx"
 
 class BirdStore {
-    // to be implemented later
+  // to be implemented later on
 }
 
 const singleton = new BirdStore()
