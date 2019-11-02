@@ -1,8 +1,18 @@
 import { observable, action, computed } from "mobx"
 
 class BirdStore {
-  // to be implemented later on
-}
+    @observable birds = [];
+  
+    @action
+    addBird = bird => {
+      this.birds.push(bird);
+    };
+  
+    @computed
+    get birdCount() {
+      return this.birds.length;
+    }
+  }
 
 const singleton = new BirdStore()
 export default singleton

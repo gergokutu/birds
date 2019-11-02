@@ -6,15 +6,37 @@ import { inject, observer } from 'mobx-react'
 @observer
 class Birds extends React.Component {
 
-  render() {
-    // access our store via the props
-    const { Birdstore } = this.props
-    console.log(this.props)
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.BirdStore.addBird(this.birdInput.value);
+        e.target.reset();
+      };
 
-    return (
-      <div>Birds</div>
-    )
-  }
+    render() {
+        // access our store via the props
+        const { BirdStore } = this.props
+        console.log(this.props)
+
+        return (
+            <div>Birds
+                <h2>You have {BirdStore.birdCount} birds</h2>
+
+                <form onSubmit={e => this.handleSubmit(e)}>
+                    <input
+                        type="text"
+                        ref={input => (this.birdInput = input)}
+                        placeholder="Add a bird"
+                    />
+                </form>
+                
+                <ul>
+                    {BirdStore.birds.map(bird => (
+                        <li key={bird}>{bird}</li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
 }
 
 // Parsing error: 
